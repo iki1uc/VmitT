@@ -1,5 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>STAGE · RESPO.ai</title>
+
+<style>
+  body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+  .box { background:#111; padding:20px; border:1px solid #333; margin-top:20px; }
+  button {
+    background:#222; color:#0f0; border:1px solid #333;
+    padding:10px 20px; cursor:pointer; margin-top:20px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>STAGE · Eingang</h1>
+
+<div id="info" class="box"></div>
+
+<button onclick="goNext()">Station laden</button>
 
 <script type="module">
+
+// Router
 const NC = {
     X: "X.station.html",
     Y: "Y.station.html",
@@ -9,8 +34,24 @@ const NC = {
     L: "L.station.html"
 };
 
+// Systemdaten laden
+const MODE  = localStorage.getItem("NC_MODE");
+const MOVE  = localStorage.getItem("NC_MOVE");
+const ID    = localStorage.getItem("RESPO_ID");
+
+// Anzeige
+document.getElementById("info").innerHTML = `
+  <p><b>MODE:</b> ${MODE}</p>
+  <p><b>MOVE:</b> ${MOVE}</p>
+  <p><b>ID:</b> ${ID}</p>
+`;
+
+// Weiterleitung
 function goNext(){
-    const mode = localStorage.getItem("NC_MODE");
-    window.location.href = NC[mode];
+    window.location.href = NC[MODE];
 }
+
 </script>
+
+</body>
+</html>
