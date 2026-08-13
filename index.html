@@ -2,20 +2,11 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>RESPO.ai · ROOT</title>
-const NC = {
-    X: "X.station.html",
-    Y: "Y.station.html",
-    C: "C.station.html",
-    V: "V.station.html",
-    T: "T.station.html",
-    L: "L.station.html"
-};
-
+<title>ROOT · RESPO.ai</title>
 <style>
   body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
-  .box { background:#111; padding:20px; border:1px solid #333; margin-top:20px; }
   a { color:#0f0; }
+  .box { background:#111; padding:20px; border:1px solid #333; margin-top:20px; }
 </style>
 </head>
 
@@ -37,21 +28,21 @@ const NC = {
 const SYSTEM_ID = {
     name: "RESPO.ai",
     version: "1.0",
-    modules: ["X","Y","C","V","T","L"],
-    matrix: "NC_6x6",
+    rooms: ["x.room","y.room","z.room"],
+    stations: ["X","Y","C","V","T","L"],
     time: Date.now()
 };
 
 localStorage.setItem("RESPO_ID", JSON.stringify(SYSTEM_ID));
 
 // Standard‑Modus setzen
-localStorage.setItem("NC_MODE", "L");
+localStorage.setItem("NC_MODE", "X");   // Startstation
 localStorage.setItem("NC_MOVE", "INIT");
 
 // Fusion erzeugen
 localStorage.setItem("NC_FUSION", JSON.stringify({
     ID: SYSTEM_ID,
-    MODE: "L",
+    MODE: "X",
     MOVE: "INIT",
     TIME: Date.now()
 }));
