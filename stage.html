@@ -1,1 +1,16 @@
 
+<script type="module">
+const NC = {
+    X: "X.station.html",
+    Y: "Y.station.html",
+    C: "C.station.html",
+    V: "V.station.html",
+    T: "T.station.html",
+    L: "L.station.html"
+};
+
+function goNext(){
+    const mode = localStorage.getItem("NC_MODE");
+    window.location.href = NC[mode];
+}
+</script>
