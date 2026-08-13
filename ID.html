@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>RESPO.ai · ID</title>
+
+<style>
+  body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+  .box { background:#111; padding:20px; border:1px solid #333; margin-top:20px; }
+  a { color:#0f0; }
+</style>
+
+<script type="module">
+const SYSTEM_ID = {
+    name: "RESPO.ai",
+    version: "1.0",
+    modules: ["X","Y","C","V","T","L"],
+    matrix: "NC_6x6",
+    time: Date.now()
+};
+
+localStorage.setItem("RESPO_ID", JSON.stringify(SYSTEM_ID));
+</script>
+</head>
+
+<body>
+
+<h1>RESPO.ai · System‑Identität</h1>
+
+<div class="box">
+  <p><b>Name:</b> RESPO.ai</p>
+  <p><b>Version:</b> 1.0</p>
+  <p><b>Module:</b> X, Y, C, V, T, L</p>
+  <p><b>Matrix:</b> NC_6x6</p>
+  <p><b>Status:</b> Initialisiert</p>
+</div>
+
+<div class="box">
+  <p>Systemdaten wurden gespeichert.</p>
+  <p>Weiter zum Hauptstart:</p>
+  <a href="L.load.root.html">ROOT starten</a>
+</div>
+
+</body>
+</html>
