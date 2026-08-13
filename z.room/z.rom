@@ -2,3 +2,7 @@
   <h2>Z‑Raum</h2>
   <p>Zustand / Vector / Daten</p>
 </div>
+async function loadRoom(file){
+  const html = await (await fetch(file)).text();
+  document.getElementById("room").innerHTML += html;
+}
