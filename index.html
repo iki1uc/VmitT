@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>RESPO.ai · ROOT</title>
+
+<style>
+  body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+  .box { background:#111; padding:20px; border:1px solid #333; margin-top:20px; }
+  a { color:#0f0; }
+</style>
+</head>
+
+<body>
+
+<h1>RESPO.ai · ROOT</h1>
+
+<div class="box">
+  <p>System wird initialisiert…</p>
+</div>
+
+<div class="box">
+  <a href="stage.html">STAGE starten</a>
+</div>
+
+<script type="module">
+
+// System‑Identität setzen
+const SYSTEM_ID = {
+    name: "RESPO.ai",
+    version: "1.0",
+    modules: ["X","Y","C","V","T","L"],
+    matrix: "NC_6x6",
+    time: Date.now()
+};
+
+localStorage.setItem("RESPO_ID", JSON.stringify(SYSTEM_ID));
+
+// Standard‑Modus setzen
+localStorage.setItem("NC_MODE", "L");
+localStorage.setItem("NC_MOVE", "INIT");
+
+// Fusion erzeugen
+localStorage.setItem("NC_FUSION", JSON.stringify({
+    ID: SYSTEM_ID,
+    MODE: "L",
+    MOVE: "INIT",
+    TIME: Date.now()
+}));
+
+</script>
+
+</body>
+</html>
